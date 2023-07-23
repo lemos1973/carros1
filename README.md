@@ -52,6 +52,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Este é um pequeno exemplo de CRUD completo em Laravel 10 e Breeze, com siatema de autenticação, personalização de logo e aproveitando todo o css do layout base da aplicação padrão, bem como sua responsividade, servindo como ponto de partida para craição de aplicações mais robustas. A Página inicial ainda está em desenvolvimento.
 
 ## Code of Conduct
 
