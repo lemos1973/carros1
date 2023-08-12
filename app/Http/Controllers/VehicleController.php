@@ -106,10 +106,13 @@ class VehicleController extends Controller
         $vehicle->color = $request->input('color');
         //..persite as alterações na base de dados
         $vehicle->save();
-        //..retorna a view index com uma mensagem
-        $vehicles = Vehicle::paginate(10);
-        return view('vehicles.index')->with('vehicles', $vehicles)
-            ->with('msg', 'Veículo atualizado com sucesso!');
+        // //..retorna a view index com uma mensagem
+        // $vehicles = Vehicle::paginate(10);
+        // return view('vehicles.index')->with('vehicles', $vehicles)
+        //     ->with('msg', 'Veículo atualizado com sucesso!');
+
+        return redirect()->route('vehicles.index')->with('msg', 'Veículo atualizado com sucesso!');
+
     }
 
     /**

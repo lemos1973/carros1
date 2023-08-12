@@ -42,9 +42,9 @@
                                 </tbody>
                             </table>
                         @endif
-                        @if(isset($msg))
+                        @if(session('msg'))
                             <script>
-                                alert("{{$msg}}");
+                                alert("{{session('msg')}}");
                             </script>
                         @endif
 
