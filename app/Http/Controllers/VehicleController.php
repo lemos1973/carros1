@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Vehicle\StoreRequest; //validação
+use App\Http\Requests\Vehicle\UpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 
@@ -115,16 +116,17 @@ class VehicleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $id)
     {
         ///..recupera o veículo mediante o id
         $vehicle = Vehicle::find($id);
+        $vehicle->update($request->validated());
         //..atualiza os atributos do objeto recuperado com os dados do objeto Request
-        $vehicle->name = $request->input('name');
-        $vehicle->year = $request->input('year');
-        $vehicle->color = $request->input('color');
-        //..persite as alterações na base de dados
-        $vehicle->save();
+        // $vehicle->name = $request->input('name');
+        // $vehicle->year = $request->input('year');
+        // $vehicle->color = $request->input('color');
+        // //..persite as alterações na base de dados
+        // $vehicle->save();
         // //..retorna a view index com uma mensagem
         // $vehicles = Vehicle::paginate(10);
         // return view('vehicles.index')->with('vehicles', $vehicles)
